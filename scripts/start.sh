@@ -19,11 +19,11 @@ docker run --name eschool-mysql \
     -d mysql:5.6
 
 # building app image
-docker build -t eschool:1.0 .
+docker build -t itca_back:v1 ../.
 
 # starting app container
 docker run --name eschool-backend \
      --env-file ./$BASEDIR/.env \
      --network eschool-network \
      -p 8080:8080 \
-     -d eschool:1.0
+     -d itca_back:v1
